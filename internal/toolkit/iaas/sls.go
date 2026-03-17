@@ -168,8 +168,8 @@ func (h *slsHandler) queryLogstoreTool() toolkit.Tool {
 
 ## 时间范围
 
-- from_time: 开始时间，支持Unix时间戳（秒/毫秒）或相对时间表达式（如 'now-1h'）
-- to_time: 结束时间，支持Unix时间戳（秒/毫秒）或相对时间表达式（如 'now'）`,
+- from_time: 开始时间，支持Unix时间戳（秒/毫秒）、相对时间表达式（如 'now-1h'）或日期时间字符串（如 '2026-03-06 17:30:00'）
+- to_time: 结束时间，支持Unix时间戳（秒/毫秒）、相对时间表达式（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）`,
 		InputSchema: map[string]interface{}{
 			"type": "object",
 			"properties": map[string]interface{}{
@@ -187,12 +187,12 @@ func (h *slsHandler) queryLogstoreTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间，支持Unix时间戳或相对时间如 'now-5m'",
+					"description": "开始时间，支持Unix时间戳、相对时间（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-5m",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"limit": map[string]interface{}{
@@ -299,8 +299,8 @@ func (h *slsHandler) queryMetricstoreTool() toolkit.Tool {
 
 ## 时间范围
 
-- from_time: 开始时间，支持Unix时间戳（秒/毫秒）或相对时间表达式
-- to_time: 结束时间，支持Unix时间戳（秒/毫秒）或相对时间表达式`,
+- from_time: 开始时间，支持Unix时间戳（秒/毫秒）、相对时间表达式或日期时间字符串（如 '2026-03-06 17:30:00'）
+- to_time: 结束时间，支持Unix时间戳（秒/毫秒）、相对时间表达式或日期时间字符串（如 '2026-03-06 17:36:00'）`,
 		InputSchema: map[string]interface{}{
 			"type": "object",
 			"properties": map[string]interface{}{
@@ -318,12 +318,12 @@ func (h *slsHandler) queryMetricstoreTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间，支持Unix时间戳或相对时间如 'now-5m'",
+					"description": "开始时间，支持Unix时间戳、相对时间（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-5m",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{
@@ -920,8 +920,8 @@ func (h *slsHandler) executeSQLTool() toolkit.Tool {
 
 ## 时间范围
 
-- from_time: 开始时间，支持Unix时间戳（秒/毫秒）或相对时间表达式（如 'now-1h'）
-- to_time: 结束时间，支持Unix时间戳（秒/毫秒）或相对时间表达式（如 'now'）`,
+- from_time: 开始时间，支持Unix时间戳（秒/毫秒）、相对时间表达式（如 'now-1h'）或日期时间字符串（如 '2026-03-06 17:30:00'）
+- to_time: 结束时间，支持Unix时间戳（秒/毫秒）、相对时间表达式（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）`,
 		InputSchema: map[string]interface{}{
 			"type": "object",
 			"properties": map[string]interface{}{
@@ -939,12 +939,12 @@ func (h *slsHandler) executeSQLTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间，支持Unix时间戳或相对时间如 'now-5m'",
+					"description": "开始时间，支持Unix时间戳、相对时间（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-5m",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"limit": map[string]interface{}{
@@ -1062,12 +1062,12 @@ func (h *slsHandler) executeSPLTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间，支持Unix时间戳或相对时间如 'now-5m'",
+					"description": "开始时间，支持Unix时间戳、相对时间（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-5m",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{
@@ -1428,12 +1428,12 @@ func (h *slsHandler) logExploreTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间: Unix时间戳(秒/毫秒)或相对时间(now-5m)",
+					"description": "开始时间: Unix时间戳(秒/毫秒)、相对时间(now-5m)或日期时间字符串(2026-03-06 17:30:00)",
 					"default":     "now-1h",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间: Unix时间戳(秒/毫秒)或相对时间(now)",
+					"description": "结束时间: Unix时间戳(秒/毫秒)、相对时间(now)或日期时间字符串(2026-03-06 17:36:00)",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{
@@ -2135,22 +2135,22 @@ func (h *slsHandler) logCompareTool() toolkit.Tool {
 				},
 				"test_from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "实验组数据的开始时间: Unix时间戳(秒/毫秒)或相对时间(now-5m)",
+					"description": "实验组数据的开始时间: Unix时间戳(秒/毫秒)、相对时间(now-5m)或日期时间字符串(2026-03-06 17:30:00)",
 					"default":     "now-1h",
 				},
 				"test_to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "实验组数据的结束时间: Unix时间戳(秒/毫秒)或相对时间(now)",
+					"description": "实验组数据的结束时间: Unix时间戳(秒/毫秒)、相对时间(now)或日期时间字符串(2026-03-06 17:36:00)",
 					"default":     "now",
 				},
 				"control_from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "对照组数据的开始时间: Unix时间戳(秒/毫秒)或相对时间(now-5m)",
+					"description": "对照组数据的开始时间: Unix时间戳(秒/毫秒)、相对时间(now-5m)或日期时间字符串(2026-03-06 17:30:00)",
 					"default":     "now-1h",
 				},
 				"control_to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "对照组数据的结束时间: Unix时间戳(秒/毫秒)或相对时间(now)",
+					"description": "对照组数据的结束时间: Unix时间戳(秒/毫秒)、相对时间(now)或日期时间字符串(2026-03-06 17:36:00)",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{

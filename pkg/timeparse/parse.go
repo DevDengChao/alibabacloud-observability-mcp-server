@@ -44,6 +44,8 @@ var dateTimeFormats = []string{
 	"2006-01-02T15:04:05",
 	"2006-01-02 15:04",
 	"2006-01-02",
+	"2006/01/02 15:04:05",
+	"2006/01/02",
 }
 
 // supportedFormats is the list of supported format descriptions for error messages.
@@ -51,7 +53,7 @@ var supportedFormats = []string{
 	"relative time (now()-1h, now-5m, now()+2h)",
 	"absolute Unix timestamp (seconds: 10 digits, milliseconds: 13 digits)",
 	"Grafana-style (now/d, now-1d/d, now/h)",
-	"date-time string (2024-01-01 00:00:00, 2024-01-01T00:00:00Z)",
+	"date-time string (2024-01-01 00:00:00, 2024-01-01T00:00:00Z, 2024/01/01 00:00:00)",
 	"preset keywords (last_1h, last_24h, today, yesterday, last_7d, last_30d)",
 }
 

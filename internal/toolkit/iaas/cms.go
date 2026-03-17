@@ -53,8 +53,8 @@ func (h *cmsHandler) queryMetricTool() toolkit.Tool {
 - namespace: 云产品命名空间，如 'acs_ecs_dashboard'、'acs_rds_dashboard'
 - metricName: 指标名称，如 'CPUUtilization'、'memory_usedutilization'
 - dimensions: 维度过滤条件，JSON格式，如 '{"instanceId":"i-xxx"}'
-- from_time: 开始时间，支持Unix时间戳（秒/毫秒）或相对时间表达式
-- to_time: 结束时间，支持Unix时间戳（秒/毫秒）或相对时间表达式`,
+- from_time: 开始时间，支持Unix时间戳（秒/毫秒）、相对时间表达式或日期时间字符串（如 '2026-03-06 17:30:00'）
+- to_time: 结束时间，支持Unix时间戳（秒/毫秒）、相对时间表达式或日期时间字符串（如 '2026-03-06 17:36:00'）`,
 		InputSchema: map[string]interface{}{
 			"type": "object",
 			"properties": map[string]interface{}{
@@ -72,12 +72,12 @@ func (h *cmsHandler) queryMetricTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间，支持Unix时间戳或相对时间如 'now-1h'",
+					"description": "开始时间，支持Unix时间戳、相对时间（如 'now-1h'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-1h",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{
@@ -280,8 +280,8 @@ func (h *cmsHandler) executePromQLTool() toolkit.Tool {
 
 ## 时间范围
 
-- from_time: 开始时间，支持Unix时间戳（秒/毫秒）或相对时间表达式
-- to_time: 结束时间，支持Unix时间戳（秒/毫秒）或相对时间表达式`,
+- from_time: 开始时间，支持Unix时间戳（秒/毫秒）、相对时间表达式或日期时间字符串（如 '2026-03-06 17:30:00'）
+- to_time: 结束时间，支持Unix时间戳（秒/毫秒）、相对时间表达式或日期时间字符串（如 '2026-03-06 17:36:00'）`,
 		InputSchema: map[string]interface{}{
 			"type": "object",
 			"properties": map[string]interface{}{
@@ -299,12 +299,12 @@ func (h *cmsHandler) executePromQLTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "开始时间，支持Unix时间戳或相对时间如 'now-5m'",
+					"description": "开始时间，支持Unix时间戳、相对时间（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-5m",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{
@@ -392,8 +392,8 @@ func (h *cmsHandler) cmsExecutePromQLTool() toolkit.Tool {
 
 ## 时间范围
 
-- from_time: 开始时间，支持Unix时间戳（秒/毫秒）或相对时间表达式（如 'now-5m'）
-- to_time: 结束时间，支持Unix时间戳（秒/毫秒）或相对时间表达式（如 'now'）`,
+- from_time: 开始时间，支持Unix时间戳（秒/毫秒）、相对时间表达式（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）
+- to_time: 结束时间，支持Unix时间戳（秒/毫秒）、相对时间表达式（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）`,
 		InputSchema: map[string]interface{}{
 			"type": "object",
 			"properties": map[string]interface{}{
@@ -411,12 +411,12 @@ func (h *cmsHandler) cmsExecutePromQLTool() toolkit.Tool {
 				},
 				"from_time": map[string]interface{}{
 					"type":        "string",
-					"description": "查询开始时间，支持Unix时间戳或相对时间如 'now-5m'",
+					"description": "查询开始时间，支持Unix时间戳、相对时间（如 'now-5m'）或日期时间字符串（如 '2026-03-06 17:30:00'）",
 					"default":     "now-5m",
 				},
 				"to_time": map[string]interface{}{
 					"type":        "string",
-					"description": "查询结束时间，支持Unix时间戳或相对时间如 'now'",
+					"description": "查询结束时间，支持Unix时间戳、相对时间（如 'now'）或日期时间字符串（如 '2026-03-06 17:36:00'）",
 					"default":     "now",
 				},
 				"regionId": map[string]interface{}{

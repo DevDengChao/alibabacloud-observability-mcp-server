@@ -143,6 +143,16 @@ func TestParseTimeExpression_DateTimeString(t *testing.T) {
 			"2024-06-15",
 			time.Date(2024, 6, 15, 0, 0, 0, 0, time.UTC).Unix(),
 		},
+		{
+			"YYYY/MM/DD HH:MM:SS (slash format)",
+			"2026/03/06 17:30:00",
+			time.Date(2026, 3, 6, 17, 30, 0, 0, time.UTC).Unix(),
+		},
+		{
+			"YYYY/MM/DD only (slash format)",
+			"2026/03/06",
+			time.Date(2026, 3, 6, 0, 0, 0, 0, time.UTC).Unix(),
+		},
 	}
 
 	for _, tt := range tests {
